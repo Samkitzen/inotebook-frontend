@@ -35,7 +35,7 @@ function App() {
           <Alert alert={alert} />
           <div className="container">
             <Switch>
-              <Route exact path="/">
+              <Route path="/">
                 <Home />
               </Route>
               <Route exact path="/about">
