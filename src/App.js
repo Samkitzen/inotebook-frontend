@@ -18,11 +18,11 @@ function App() {
 
   const [alert, setAlert] = useState(null);
   const showAlert = (message, type) => {
-    console.log("showAlert called");
     setAlert({
       msg: message,
       type: type
     });
+
     setTimeout(() => {
       setAlert(null);
     }, 2000);

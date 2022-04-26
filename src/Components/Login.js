@@ -6,9 +6,11 @@ const Login = (props) => {
     const host = "https://stark-cove-74055.herokuapp.com";
     const [credentials, setcredentials] = useState({ email: "", password: "" });
     const history = useHistory(); //to redirect
+    
     const handleSubmit = async (event) => {
         event.preventDefault();
         const url = `${host}/api/auth/login`;
+
         const response = await fetch(url,
             {
                 method: 'POST',
@@ -17,8 +19,8 @@ const Login = (props) => {
                 },
                 body: JSON.stringify(credentials)
             });
+
         const json = await response.json();
-        console.log(json);
         if (json.success) {
             //Redirect
             localStorage.setItem('token', json.authToken);
